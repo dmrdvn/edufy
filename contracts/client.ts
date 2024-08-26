@@ -7,12 +7,13 @@ export const publicClient = createPublicClient({
   transport: http(),
 });
 
-
-export const walletClient = createWalletClient({
-  chain: sepolia,
-  transport: custom(window.ethereum!),
-});
-
+// `window` nesnesinin varlığını kontrol ediyoruz
+export const walletClient = typeof window !== "undefined" && window.ethereum
+  ? createWalletClient({
+      chain: sepolia,
+      transport: custom(window.ethereum),
+    })
+  : null;
 
 export async function getWalletConnectClient() {
   const provider = await EthereumProvider.init({
