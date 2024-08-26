@@ -1,18 +1,14 @@
 "use client";
 
-import postData from "@/data/postData";
+
 import { useState } from "react";
 import RightSide from "../home/RightSide";
 import HomeLeft from "../menu/HomeLeft";
-import ParentComment from "../ui/ParentComment";
-import Post from "../ui/Post";
-import PostReaction from "../ui/PostReaction";
-import SiblingComment from "../ui/SiblingComment";
-import WriteComment from "../ui/WriteComment";
+
 
 const SavedPostDetailsMain = () => {
   const [activeProfile, setActiveProfile] = useState<boolean>(false);
-  const data = postData[2];
+
 
   return (
     <main className="main-content">
@@ -26,8 +22,7 @@ const SavedPostDetailsMain = () => {
             <div className="post-item d-flex flex-column gap-5 gap-md-7">
               <div className="post-single-box p-3 p-sm-5">
                
-                {/*  <Post post={data} /> */}
-                {/* <PostReaction /> */}
+         
 
               </div>
             </div>
