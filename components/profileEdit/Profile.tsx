@@ -20,9 +20,9 @@ const Profile = ({ onPhotoChange, photoCid }: ProfileProps) => {
           if (!response.ok) {
             throw new Error('Failed to fetch image from IPFS');
           }
-          const blob = await response.blob(); // Response'u Blob olarak dönüştürme
-          const imageUrl = URL.createObjectURL(blob); // Blob'u bir URL'ye çevirme
-          setSelectedImage(imageUrl); // IPFS'ten gelen görüntüyü göster
+          const blob = await response.blob(); 
+          const imageUrl = URL.createObjectURL(blob); 
+          setSelectedImage(imageUrl); 
         } catch (error) {
           console.error("Error fetching image from IPFS:", error);
         }
@@ -35,8 +35,8 @@ const Profile = ({ onPhotoChange, photoCid }: ProfileProps) => {
   const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file)); // Yeni seçilen fotoğrafı göster
-      onPhotoChange(file); // Seçilen dosyayı parent component'e gönder
+      setSelectedImage(URL.createObjectURL(file)); 
+      onPhotoChange(file); 
     }
   };
 

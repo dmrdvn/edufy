@@ -19,6 +19,8 @@ const ProfileEditMain = () => {
   const [photoCid, setPhotoCid] = useState<string>(""); // IPFS'ten alınan CID
   const [saving, setSaving] = useState<boolean>(false);
 
+ 
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       if (address) {

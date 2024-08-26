@@ -14,9 +14,9 @@ export const registerUser = async () => {
   const [account] = await client.getAddresses();
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const register = await client.writeContract({
@@ -35,9 +35,9 @@ export const updateUser = async (username: string, photo: string, isVerified: bo
   const [account] = await client.getAddresses();
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const update = await client.writeContract({
@@ -56,9 +56,9 @@ export const getUserInfo = async (walletAddress: `0x${string}`) => {
   const client = checkWalletClient();
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const userInfo = await contract.read.getUser([walletAddress]);
@@ -71,9 +71,9 @@ export const isUserRegistered = async (walletAddress: `0x${string}`) => {
   const client = checkWalletClient();
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const isRegistered = await contract.read.isUser([walletAddress]);
@@ -93,9 +93,9 @@ export const createTable = async (
   const endDate = BigInt(tableEndDate);
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const createTableTx = await client.writeContract({
@@ -118,9 +118,9 @@ export const participateInTable = async (tableId: number | bigint, amount: numbe
   const amountNo = BigInt(amount);
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const participateTx = await client.writeContract({
@@ -142,9 +142,9 @@ export const submitAnswer = async (tableId: number | bigint, userAnswer: string)
   const id = BigInt(tableId);
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const submitAnswerTx = await client.writeContract({
@@ -163,9 +163,9 @@ export const getAllTables = async () => {
   const client = checkWalletClient();
 
   const contract = getContract({
-    address: '0x22fA060CC20C9DfE63077bA63223Eb7989a4aDD2',
+    address: '0x288f2BAde38Ee288B5dac5f96f5f89A9200b53C2',
     abi: wagmiAbi,
-    client, // walletClient yerine artık client kullanıyoruz
+    client, 
   });
 
   const tables = await contract.read.getAllTables();
